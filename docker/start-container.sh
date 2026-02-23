@@ -53,11 +53,11 @@ fi
 
 echo "✅ Database connection established"
 
-# Run migrations
-if [ "$APP_ENV" = "production" ]; then
-    echo "📊 Running migrations..."
-    php artisan migrate --force --no-interaction
-fi
+# Run migrations (disabled - table already exists)
+# if [ "$APP_ENV" = "production" ]; then
+#     echo "📊 Running migrations..."
+#     php artisan migrate --force --no-interaction
+# fi
 
 # Clear caches first
 echo "🧹 Clearing caches..."
