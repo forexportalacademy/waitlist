@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  waitlist:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: waitlist-app
+    ports:
+      - "8005:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
+    env_file:
+      - .env
+    environment:
+      - APP_NAME=${APP_NAME}
+      - APP_ENV=${APP_ENV}
+      - APP_KEY=${APP_KEY}
+      - APP_DEBUG=${APP_DEBUG}
+      - APP_URL=${APP_URL}
+      - LOG_CHANNEL=${LOG_CHANNEL}
+      - LOG_LEVEL=${LOG_LEVEL}
+    restart: unless-stopped
+    networks:
+      - waitlist-network
+
+networks:
+  waitlist-network:
+    driver: bridge
+
+volumes:
+  waitlist-data:
+    driver: local
