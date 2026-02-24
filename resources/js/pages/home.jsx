@@ -221,7 +221,7 @@ export default function Home() {
                                         className="mt-1 w-full rounded-xl border border-border px-4 py-3 text-sm"
                                     />
                                     {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
-                                    <p className="mt-1 text-xs text-blue-600">
+                                    <p className="mt-1 text-xs text-amber-600">
                                         <span className='text-shadow-amber-200'>Please check your email before submission to confirm your registration for the free course.</span>
                                     </p>
                                 </div>
