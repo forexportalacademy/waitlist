@@ -68,13 +68,15 @@ export function ServicesSection() {
                                     </div>
                                     <p className="text-muted-foreground leading-relaxed mb-8 text-base">{service.description}</p>
 
-                                    <button
-                                        type="button"
+                                    <a
+                                        href="https://wa.link/tf3zia"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="mt-auto inline-flex items-center justify-center w-full rounded-xl border border-border px-4 py-3 text-sm font-semibold text-foreground hover:border-accent hover:text-accent transition-colors"
                                     >
                                         Learn More
                                         <ArrowRight className="ml-2 h-4 w-4" />
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         ))}
@@ -96,13 +98,15 @@ export function ServicesSection() {
                                     </div>
                                     <p className="text-muted-foreground leading-relaxed mb-8 text-base">{service.description}</p>
 
-                                    <button
-                                        type="button"
+                                    <a
+                                        href="https://wa.link/tf3zia"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="mt-auto inline-flex items-center justify-center w-full rounded-xl border border-border px-4 py-3 text-sm font-semibold text-foreground hover:border-accent hover:text-accent transition-colors"
                                     >
                                         Learn More
                                         <ArrowRight className="ml-2 h-4 w-4" />
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         ))}

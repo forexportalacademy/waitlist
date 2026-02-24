@@ -1,7 +1,6 @@
-import { Link } from '@inertiajs/react';
 import { ArrowRight } from 'lucide-react';
 
-export function CTASection() {
+export function CTASection({ setOpen }) {
     return (
         <section className="py-16 text-center text-white">
             <div className="container mx-auto px-4">
@@ -13,13 +12,14 @@ export function CTASection() {
                         Join thousands of successful traders who started their journey with us. Your first class is
                         completely free.
                     </p>
-                    <Link
-                        href="/#waitlist"
+                    <button
+                        type="button"
+                        onClick={() => setOpen(true)}
                         className="inline-flex items-center justify-center bg-accent text-primary hover:bg-accent/90 h-11 rounded-md px-6 text-sm font-semibold"
                     >
                         Start Free Class
                         <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
+                    </button>
                 </div>
             </div>
         </section>
