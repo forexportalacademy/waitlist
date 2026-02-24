@@ -34,18 +34,18 @@ export function MentorSection() {
                         <div className="grid grid-cols-3 gap-4">
                             <div className="bg-[#0F1853] rounded-lg p-4 text-center">
                                 <Users className="h-8 w-8 text-accent mx-auto mb-2" />
-                                <p className="text-2xl font-bold text-accent mb-1">500+</p>
+                                <p className="text-2xl font-bold text-accent mb-1">22k+</p>
                                 <p className="text-sm text-primary-foreground/70">Students trained</p>
                             </div>
                             <div className="bg-[#0F1853] rounded-lg p-4 text-center">
                                 <Award className="h-8 w-8 text-accent mx-auto mb-2" />
-                                <p className="text-2xl font-bold text-accent mb-1">5+</p>
+                                <p className="text-2xl font-bold text-accent mb-1">7+</p>
                                 <p className="text-sm text-primary-foreground/70">Years experience</p>
                             </div>
                             <div className="bg-[#0F1853] rounded-lg p-4 text-center">
                                 <Headphones className="h-8 w-8 text-accent mx-auto mb-2" />
                                 <p className="text-2xl font-bold text-accent mb-1">24/7</p>
-                                <p className="text-sm text-primary-foreground/70">Support</p>
+                                <p className="text-sm text-primary-foreground/70">Live Support</p>
                             </div>
                         </div>
                     </div>

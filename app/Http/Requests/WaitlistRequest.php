@@ -16,7 +16,7 @@ class WaitlistRequest extends FormRequest
         return [
             'first_name' => ['required', 'string', 'max:120'],
             'last_name' => ['required', 'string', 'max:120'],
-            'email' => ['required', 'email:rfc,dns', 'max:255'],
+            'email' => ['required', 'email:rfc,dns', 'max:255', 'unique:waitlists,email'],
             'phone' => ['required', 'string', 'max:40'],
             'gender' => ['required', 'string', 'max:40'],
         ];
@@ -29,6 +29,7 @@ class WaitlistRequest extends FormRequest
             'last_name.required' => 'Please provide your last name.',
             'email.required' => 'Please provide an email address.',
             'email.email' => 'Please provide a valid email address.',
+            'email.unique' => 'This email address is already registered for the waitlist.',
             'phone.required' => 'Please provide a phone number.',
             'gender.required' => 'Please choose a gender.',
         ];

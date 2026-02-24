@@ -81,7 +81,7 @@ export default function Home() {
                                     </div>
                                     <div>
                                         <div className="text-3xl lg:text-4xl font-bold text-accent">24/7</div>
-                                        <div className="text-base text-primary-foreground/70">Signal Support</div>
+                                        <div className="text-base text-primary-foreground/70">Live Support</div>
                                     </div>
                                 </div>
                             </div>

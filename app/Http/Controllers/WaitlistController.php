@@ -15,8 +15,26 @@ class WaitlistController extends Controller
     {
         $payload = $request->validated();
         
-        // Store user information in database (set mail_sent_at to current time initially)
-        $waitlistUser = Waitlist::create(array_merge($payload, ['mail_sent_at' => now()]));
+        try {
+            // Store user information in database (set mail_sent_at to current time initially)
+            $waitlistUser = Waitlist::create(array_merge($payload, ['mail_sent_at' => now()]));
+        } catch (\Exception $e) {
+            // Handle database constraint violations or other database errors
+            if (str_contains($e->getMessage(), 'Duplicate entry') || str_contains($e->getMessage(), 'UNIQUE constraint')) {
+                return back()->withErrors([
+                    'email' => 'This email address is already registered for the waitlist.'
+                ])->withInput();
+            }
+            
+            Log::error('Failed to store waitlist user', [
+                'email' => $payload['email'],
+                'error' => $e->getMessage()
+            ]);
+            
+            return back()->withErrors([
+                'email' => 'An error occurred while processing your registration. Please try again.'
+            ])->withInput();
+        }
         
         // Send email using the specific template for free course
         $templateAlias = "start-free-course"; // This should be the template alias in your Zepto account

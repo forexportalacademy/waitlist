@@ -7,7 +7,7 @@ const testimonials = [
         content:
             'The mentorship program completely transformed my trading journey. I went from losing money consistently to becoming a profitable trader in just 3 months.',
         rating: 5,
-        avatar: '/images/know-your-mentor.png',
+        avatar: 'https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=150&h=150&fit=crop&crop=face',
     },
     {
         name: 'Chioma Okonkwo',
@@ -15,7 +15,7 @@ const testimonials = [
         content:
             'Clear explanations, practical strategies, and constant support. This is exactly what I needed to start my trading career. Highly recommended!',
         rating: 5,
-        avatar: '/images/know-your-mentor.png',
+        avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=150&h=150&fit=crop&crop=face',
     },
     {
         name: 'Emmanuel Nwachukwu',
@@ -23,7 +23,7 @@ const testimonials = [
         content:
             'I was skeptical at first, but the results speak for themselves. The synthetic indices course opened up a whole new income stream for me.',
         rating: 5,
-        avatar: '/images/know-your-mentor.png',
+        avatar: 'https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?w=150&h=150&fit=crop&crop=face',
     },
 ];
 
