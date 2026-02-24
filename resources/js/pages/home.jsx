@@ -57,7 +57,13 @@ export default function Home() {
 
                 <section className="relative overflow-hidden h-screen flex items-center">
                     <div className="absolute inset-0">
-                        <img src="/images/BG.png" alt="Hero Background" className="w-full h-full object-cover" />
+                        <img 
+                            src="/images/BG.png" 
+                            alt="Hero Background" 
+                            className="w-full h-full object-cover" 
+                            loading="eager"
+                            fetchpriority="high"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent"></div>
                     </div>
 
