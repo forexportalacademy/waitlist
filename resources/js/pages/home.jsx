@@ -222,7 +222,7 @@ export default function Home() {
                                     />
                                     {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
                                     <p className="mt-1 text-xs text-blue-600">
-                                        <span className='text-shadow-amber-200'>Please check your email after submission to confirm your registration for the free course.</span>
+                                        <span className='text-shadow-amber-200'>Please check your email before submission to confirm your registration for the free course.</span>
                                     </p>
                                 </div>
                                 <div className="grid gap-4 sm:grid-cols-2">
