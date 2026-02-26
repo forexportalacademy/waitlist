@@ -13,7 +13,7 @@ export function MentorSection() {
                     <div className="flex justify-center lg:justify-end">
                         <div className="w-[420px] h-[520px] rounded-2xl overflow-hidden shadow-2xl">
                             <img
-                                src="/images/know-your-mentor.png"
+                                src="/images/mentor.jpeg"
                                 alt="Mr. Andrew Tate - Forex Mentor"
                                 className="w-full h-full object-cover"
                             />
