@@ -101,6 +101,6 @@ class WaitlistController extends Controller
             ]);
         }
 
-        return back()->with('success', 'Thanks for joining the waitlist! Check your email for course details.');
+        return back()->with('success', 'Thanks for signing up! Check your email for course access detail and confirmation');
     }
 }
