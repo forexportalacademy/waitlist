@@ -38,14 +38,16 @@ class WaitlistController extends Controller
         
         // Send email using the specific template for free course
         $templateAlias = "start-free-course";
-        $telegramLink = "https://google.com";
-        $whatsappLink = "https://wa.link/tf3zia";
+        $classLink = "https://t.me/m/dRRTIX5YNGVk";
+        $telegramLink = "https://t.me/+Mv5nThwlwbJhOTg0";
+        $whatsappLink = "https://chat.whatsapp.com/F3z82ROUoPa8S4GIvZf1HE?mode=gi_t";
 
         try {
             $mergeVariables = [
                 'name' => trim($payload['first_name'].' '.$payload['last_name']),
                 'first_name' => $payload['first_name'],
                 'product_name' => config('app.name'),
+                'class_link' => $classLink,
                 'telegram_link' => $telegramLink,
                 'whatsapp_link' => $whatsappLink,
             ];
@@ -103,6 +105,6 @@ class WaitlistController extends Controller
             ]);
         }
 
-        return back()->with('success', 'Thanks for signing up! Check your email for course access detail and confirmation');
+        return back()->with('success', "✅ Your seat is confirmed\n📩 We've sent the class link to your email\n⚠️ Check Spam/Promotions if you don't see it");
     }
 }

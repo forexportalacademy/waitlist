@@ -29,11 +29,24 @@ export default function Home() {
         }
     }, [flash?.success]);
 
+    useEffect(() => {
+       
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('openForm') === 'true') {
+            setOpen(true);
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    }, []);
+
     const submit = (event) => {
         event.preventDefault();
         post('/waitlist', {
             preserveScroll: true,
-            onSuccess: () => reset(),
+            onSuccess: () => {
+                reset();
+                // Open WhatsApp link in new tab after successful submission
+                window.open('https://chat.whatsapp.com/F3z82ROUoPa8S4GIvZf1HE?mode=gi_t', '_blank');
+            },
         });
     };
 
@@ -166,9 +179,9 @@ export default function Home() {
                         <div className="w-full max-w-[calc(100vw-1.5rem)] sm:max-w-xl px-1 sm:px-0">
                             {formSuccess ? (
                                 <div className="text-center py-8">
-                                    <p className="text-muted-foreground mb-6">
-                                        Thanks for joining the waitlist! Check your email for course details and confirmation.
-                                    </p>
+                                    <div className="text-muted-foreground mb-6 whitespace-pre-line">
+                                        {flash?.success}
+                                    </div>
                                     <button
                                         type="button"
                                         onClick={() => {
@@ -265,7 +278,7 @@ export default function Home() {
                                     disabled={processing}
                                     className="w-full rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white hover:bg-primary/90 disabled:opacity-70"
                                 >
-                                    Submit
+                                    Get Instant Access Now
                                 </button>
                             </form>
                                 </>

@@ -27,10 +27,10 @@ export default function ComingSoon({ title, description }) {
                             Back to Home
                         </Link>
                         <Link
-                            href="/#waitlist"
+                            href="/?openForm=true"
                             className="rounded-full border border-white/40 bg-white/70 px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-white"
                         >
-                            Join Waitlist
+                            Join the Free Class
                         </Link>
                     </div>
                 </main>
