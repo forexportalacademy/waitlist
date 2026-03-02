@@ -38,7 +38,7 @@ class WaitlistController extends Controller
         
         // Send email using the specific template for free course
         $templateAlias = "start-free-course";
-        $classLink = "https://t.me/m/dRRTIX5YNGVk";
+        $classLink = "https://chat.whatsapp.com/F3z82ROUoPa8S4GIvZf1HE?mode=gi_t";
         $telegramLink = "https://t.me/+Mv5nThwlwbJhOTg0";
         $whatsappLink = "https://chat.whatsapp.com/F3z82ROUoPa8S4GIvZf1HE?mode=gi_t";
 
