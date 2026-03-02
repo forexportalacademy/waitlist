@@ -25,7 +25,7 @@ export function MentorSection() {
                         <p className="text-accent font-medium mb-6 text-lg">Professional Forex Trader & Mentor</p>
 
                         <p className="text-primary-foreground/90 leading-relaxed mb-8 text-base">
-                            Mr. Emmanuel Ekop Etim is a seasoned Forex and Synthetic Indices trader with 7 years of practical experience. A respected Trader, Mentor, Investor, and Philanthropist, he is known for his results-driven approach to trading and financial education. As Founder and CEO of Forex Portal Academy, Emmanuel empowers youths across Nigeria and Africa through mentorship, webinars, seminars, and educational resources, helping them develop real trading skills, discipline, and financial independence.
+                            Mr. Emmanuel Ekop Etim is a seasoned Forex and Synthetic Indices trader with 7 years of practical experience. A respected Trader, Mentor, Investor, and Philanthropist, he is known for his results-driven approach to trading and financial education. <br /> <br /> As Founder and CEO of Forex Portal Academy, Emmanuel empowers youths across Nigeria and Africa through mentorship, webinars, seminars, and educational resources, helping them develop real trading skills, discipline, and financial independence.
                         </p>
 
                         <div className="grid grid-cols-3 gap-4">

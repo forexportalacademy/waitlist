@@ -107,8 +107,8 @@ export default function Home() {
 
                             <div className="text-left lg:text-right">
                                 <p className="mb-8 text-xl text-primary-foreground/80 sm:text-2xl max-w-md lg:ml-auto">
-                                    Learn Forex & Synthetic Indices trading from industry experts. Get premium signals,
-                                    automated trading robots, and certified courses to accelerate your trading journey.
+                                    Learn Simple, Replicable Forex Strategy You Can Use Even as a Beginner. Stop guessing, Stop blowing accounts.
+                                    Discover how profitable traders approach the market with structure, clarity, and confidence.
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row lg:justify-end gap-4">
