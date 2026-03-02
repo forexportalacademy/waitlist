@@ -37,8 +37,9 @@ class WaitlistController extends Controller
         }
         
         // Send email using the specific template for free course
-        $templateAlias = "start-free-course"; // This should be the template alias in your Zepto account
+        $templateAlias = "start-free-course";
         $telegramLink = "https://google.com";
+        $whatsappLink = "https://wa.link/tf3zia";
 
         try {
             $mergeVariables = [
@@ -46,6 +47,7 @@ class WaitlistController extends Controller
                 'first_name' => $payload['first_name'],
                 'product_name' => config('app.name'),
                 'telegram_link' => $telegramLink,
+                'whatsapp_link' => $whatsappLink,
             ];
 
             // Use Zepto Mail API directly
@@ -84,7 +86,7 @@ class WaitlistController extends Controller
                 // Fallback to Laravel Mail with provider options
                 Mail::raw('', function ($message) use ($payload, $templateAlias, $mergeVariables) {
                     $message->to($payload['email'], trim($payload['first_name'].' '.$payload['last_name']))
-                        ->subject('Start Your Free Course - Welcome to Forex Portal Academy');
+                        ->subject('Congratulations — Your reservation in the Forex Portal Free Class is confirmed ✅');
 
                     $headers = $message->getHeaders();
                     $headers->addTextHeader('template_key', $templateAlias);

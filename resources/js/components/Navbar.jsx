@@ -16,7 +16,7 @@ export function Navbar({ transparent = false }) {
                 <div className="flex items-center h-16">
                     <Link href="/" className={transparent ? 'text-xl font-bold text-primary-foreground' : ''}>
                         {transparent ? (
-                            <img src="/logo-white.png" alt="Forex Portal" className="h-8 w-auto" />
+                            <img src="/logo-white.png" alt="Forex Portal" className="h-6 sm:h-8 w-auto" />
                         ) : (
                             <span className="text-xl font-bold text-gray-900">Forex Portal</span>
                         )}

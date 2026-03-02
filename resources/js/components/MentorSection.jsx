@@ -14,21 +14,18 @@ export function MentorSection() {
                         <div className="w-[420px] h-[520px] rounded-2xl overflow-hidden shadow-2xl">
                             <img
                                 src="/images/mentor.jpeg"
-                                alt="Mr. Andrew Tate - Forex Mentor"
+                                alt="Mr Emmanuel Ekop - Forex Mentor"
                                 className="w-full h-full object-cover"
                             />
                         </div>
                     </div>
 
                     <div className="bg-[#000733] rounded-2xl p-10 text-white min-h-[520px] flex flex-col justify-between">
-                        <h3 className="text-3xl font-bold mb-2">Mr. Andrew Tate</h3>
+                        <h3 className="text-3xl font-bold mb-2">Mr Emmanuel Ekop</h3>
                         <p className="text-accent font-medium mb-6 text-lg">Professional Forex Trader & Mentor</p>
 
                         <p className="text-primary-foreground/90 leading-relaxed mb-8 text-base">
-                            With years of experience in the forex and synthetic indices markets, our mentor has helped
-                            hundreds of students achieve financial freedom through strategic trading. His practical
-                            approach combines technical analysis with risk management, making complex concepts easy to
-                            understand for beginners and advanced traders alike.
+                            Mr. Emmanuel Ekop Etim is a seasoned Forex and Synthetic Indices trader with 7 years of practical experience. A respected Trader, Mentor, Investor, and Philanthropist, he is known for his results-driven approach to trading and financial education. As Founder and CEO of Forex Portal Academy, Emmanuel empowers youths across Nigeria and Africa through mentorship, webinars, seminars, and educational resources, helping them develop real trading skills, discipline, and financial independence.
                         </p>
 
                         <div className="grid grid-cols-3 gap-4">
