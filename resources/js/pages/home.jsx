@@ -163,7 +163,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="relative flex h-full items-center justify-center bg-white px-3 sm:px-6 py-6 sm:py-12 overflow-y-auto max-w-fit">
+                    <div className="relative flex h-full items-center justify-center bg-white px-3 sm:px-6 py-4 sm:py-6 overflow-y-auto max-w-fit">
                         <button
                             type="button"
                             onClick={() => {
@@ -178,8 +178,8 @@ export default function Home() {
 
                         <div className="w-full max-w-[calc(100vw-1.5rem)] sm:max-w-xl px-1 sm:px-0">
                             {formSuccess ? (
-                                <div className="text-center py-8">
-                                    <div className="text-muted-foreground mb-6 whitespace-pre-line">
+                                <div className="text-center py-4">
+                                    <div className="text-muted-foreground mb-4 whitespace-pre-line text-sm leading-relaxed">
                                         {flash?.success}
                                     </div>
                                     <button
@@ -188,20 +188,21 @@ export default function Home() {
                                             setOpen(false);
                                             setFormSuccess(false);
                                             reset();
+                                            window.open('https://chat.whatsapp.com/F3z82ROUoPa8S4GIvZf1HE?mode=gi_t', '_blank');
                                         }}
-                                        className="rounded-xl bg-accent px-6 py-3 text-white text-sm font-semibold text-primary hover:bg-accent/90"
+                                        className="rounded-xl bg-accent px-6 py-3 text-white text-sm font-semibold hover:bg-accent/90"
                                     >
-                                        Close
+                                        Get Instant Access Now
                                     </button>
                                 </div>
                             ) : (
                                 <>
                                     <h3 className="text-3xl font-bold text-foreground mb-2">Start Free Class</h3>
-                                    <p className="text-sm text-muted-foreground mb-8">
+                                    <p className="text-sm text-muted-foreground mb-6">
                                         Enter your details to access the free class.
                                     </p>
 
-                            <form onSubmit={submit} className="space-y-5">
+                            <form onSubmit={submit} className="space-y-4">
                                 <div className="grid gap-4 sm:grid-cols-2">
                                     <div>
                                         <label className="text-xs font-semibold text-muted-foreground">First name</label>
@@ -278,7 +279,7 @@ export default function Home() {
                                     disabled={processing}
                                     className="w-full rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white hover:bg-primary/90 disabled:opacity-70"
                                 >
-                                    Get Instant Access Now
+                                    Access
                                 </button>
                             </form>
                                 </>
