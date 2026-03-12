@@ -45,7 +45,7 @@ export default function Home() {
             onSuccess: () => {
                 reset();
                 // Open WhatsApp link in new tab after successful submission
-                window.open('https://chat.whatsapp.com/F3z82ROUoPa8S4GIvZf1HE?mode=gi_t', '_blank');
+                window.open('https://chat.whatsapp.com/DmJEo2tN2lAJiLct2ZAdqx?mode=gi_t', '_blank');
             },
         });
     };
@@ -188,7 +188,7 @@ export default function Home() {
                                             setOpen(false);
                                             setFormSuccess(false);
                                             reset();
-                                            window.open('https://chat.whatsapp.com/F3z82ROUoPa8S4GIvZf1HE?mode=gi_t', '_blank');
+                                            window.open('https://chat.whatsapp.com/DmJEo2tN2lAJiLct2ZAdqx?mode=gi_t', '_blank');
                                         }}
                                         className="rounded-xl bg-accent px-6 py-3 text-white text-sm font-semibold hover:bg-accent/90"
                                     >
