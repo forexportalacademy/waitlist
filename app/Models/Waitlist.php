@@ -13,9 +13,11 @@ class Waitlist extends Model
         'phone',
         'gender',
         'mail_sent_at',
+        'reminder_sent_at',
     ];
 
     protected $casts = [
         'mail_sent_at' => 'datetime',
+        'reminder_sent_at' => 'datetime',
     ];
 }

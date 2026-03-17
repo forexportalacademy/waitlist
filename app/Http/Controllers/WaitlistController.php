@@ -38,9 +38,9 @@ class WaitlistController extends Controller
         
         // Send email using the specific template for free course
         $templateAlias = "start-free-course";
-        $classLink = "https://chat.whatsapp.com/DmJEo2tN2lAJiLct2ZAdqx?mode=gi_t";
+        $classLink = "https://chat.whatsapp.com/LG9vyjEb6mK1N2Px4vhcF3?mode=gi_t";
         $telegramLink = "https://t.me/+Mv5nThwlwbJhOTg0";
-        $whatsappLink = "https://chat.whatsapp.com/DmJEo2tN2lAJiLct2ZAdqx?mode=gi_t";
+        $whatsappLink = "https://chat.whatsapp.com/LG9vyjEb6mK1N2Px4vhcF3?mode=gi_t";
 
         try {
             $mergeVariables = [
