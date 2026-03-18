@@ -188,7 +188,7 @@ export default function Home() {
                                             setOpen(false);
                                             setFormSuccess(false);
                                             reset();
-                                            window.open('https://chat.whatsapp.com/DmJEo2tN2lAJiLct2ZAdqx?mode=gi_t', '_blank');
+                                            window.open('https://chat.whatsapp.com/LG9vyjEb6mK1N2Px4vhcF3?mode=gi_t', '_blank');
                                         }}
                                         className="rounded-xl bg-accent px-6 py-3 text-white text-sm font-semibold hover:bg-accent/90"
                                     >
