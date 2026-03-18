@@ -9,4 +9,4 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 
 // Run daily; system cron should call `php artisan schedule:run` every minute.
-Schedule::command('waitlist:send-reminders')->dailyAt('09:00');
+app(Schedule::class)->command('waitlist:send-reminders')->dailyAt('09:00');
