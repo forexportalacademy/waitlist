@@ -12,6 +12,7 @@ export default function Home() {
     const { flash } = usePage().props;
     const [open, setOpen] = useState(false);
     const [formSuccess, setFormSuccess] = useState(false);
+    const [whatsappLink, setWhatsappLink] = useState(null);
     const { data, setData, post, processing, errors, reset } = useForm({
         first_name: '',
         last_name: '',
@@ -21,6 +22,32 @@ export default function Home() {
     });
 
     const [toastVisible, setToastVisible] = useState(false);
+    const fallbackWhatsappLink = 'https://chat.whatsapp.com/LG9vyjEb6mK1N2Px4vhcF3?mode=gi_t';
+
+    const extractWhatsappUrl = (payload) => {
+        if (!payload) {
+            return null;
+        }
+
+        if (typeof payload === 'string') {
+            return payload;
+        }
+
+        if (typeof payload === 'object') {
+            const candidates = [
+                payload.url,
+                payload.whatsapp_url,
+                payload.value,
+                payload?.data?.url,
+                payload?.data?.whatsapp_url,
+                payload?.data?.value,
+            ];
+
+            return candidates.find((candidate) => typeof candidate === 'string' && candidate.length > 0) || null;
+        }
+
+        return null;
+    };
 
     useEffect(() => {
         if (flash?.success) {
@@ -38,6 +65,48 @@ export default function Home() {
         }
     }, []);
 
+    useEffect(() => {
+        let isMounted = true;
+        const controller = new AbortController();
+
+        const loadWhatsappUrl = async () => {
+            try {
+                const response = await fetch('http://localhost:8000/public-config/whatsapp_url', {
+                    signal: controller.signal,
+                });
+
+                let payload;
+                try {
+                    payload = await response.json();
+                } catch {
+                    payload = await response.text();
+                }
+
+                if (!isMounted) {
+                    return;
+                }
+
+                const url = extractWhatsappUrl(payload);
+                if (url) {
+                    setWhatsappLink(url);
+                }
+            } catch {
+                // Keep fallback if request fails.
+            }
+        };
+
+        loadWhatsappUrl();
+
+        return () => {
+            isMounted = false;
+            controller.abort();
+        };
+    }, []);
+
+    const openWhatsapp = () => {
+        window.open(whatsappLink || fallbackWhatsappLink, '_blank');
+    };
+
     const submit = (event) => {
         event.preventDefault();
         post('/waitlist', {
@@ -45,7 +114,7 @@ export default function Home() {
             onSuccess: () => {
                 reset();
                 // Open WhatsApp link in new tab after successful submission
-                window.open('https://chat.whatsapp.com/DmJEo2tN2lAJiLct2ZAdqx?mode=gi_t', '_blank');
+                openWhatsapp();
             },
         });
     };
@@ -188,7 +257,7 @@ export default function Home() {
                                             setOpen(false);
                                             setFormSuccess(false);
                                             reset();
-                                            window.open('https://chat.whatsapp.com/LG9vyjEb6mK1N2Px4vhcF3?mode=gi_t', '_blank');
+                                            openWhatsapp();
                                         }}
                                         className="rounded-xl bg-accent px-6 py-3 text-white text-sm font-semibold hover:bg-accent/90"
                                     >

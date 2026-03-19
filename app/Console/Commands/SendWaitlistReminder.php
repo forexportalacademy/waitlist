@@ -7,6 +7,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use App\Support\PublicConfig;
 
 class SendWaitlistReminder extends Command
 {
@@ -27,9 +28,9 @@ class SendWaitlistReminder extends Command
         $this->info("Found {$total} waitlist users to remind.");
 
         $templateAlias = 'waitlist-reminder';
-        $classLink = 'https://chat.whatsapp.com/LG9vyjEb6mK1N2Px4vhcF3?mode=gi_t';
+        $classLink = PublicConfig::whatsappUrl();
         $telegramLink = 'https://t.me/+Mv5nThwlwbJhOTg0';
-        $whatsappLink = 'https://chat.whatsapp.com/LG9vyjEb6mK1N2Px4vhcF3?mode=gi_t';
+        $whatsappLink = $classLink;
 
         $query->orderBy('id')->chunkById(100, function ($waitlists) use ($templateAlias, $classLink, $telegramLink, $whatsappLink) {
             foreach ($waitlists as $waitlist) {
