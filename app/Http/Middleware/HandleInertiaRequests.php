@@ -22,6 +22,9 @@ class HandleInertiaRequests extends Middleware
             'flash' => [
                 'success' => $request->session()->get('success'),
             ],
+            'config' => [
+                'parent_api_url' => config('services.parent_api_url'),
+            ],
         ];
     }
 }

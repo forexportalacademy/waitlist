@@ -9,7 +9,7 @@ import { CTASection } from '@/components/CTASection';
 import { Footer } from '@/components/Footer';
 
 export default function Home() {
-    const { flash } = usePage().props;
+    const { flash, config } = usePage().props;
     const [open, setOpen] = useState(false);
     const [formSuccess, setFormSuccess] = useState(false);
     const [whatsappLink, setWhatsappLink] = useState(null);
@@ -22,7 +22,7 @@ export default function Home() {
     });
 
     const [toastVisible, setToastVisible] = useState(false);
-    const fallbackWhatsappLink = 'https://chat.whatsapp.com/LG9vyjEb6mK1N2Px4vhcF3?mode=gi_t';
+    const fallbackWhatsappLink = `https://chat.whatsapp.com/EjclkcICJK0DccWKtyFVsx?mode=gi_t`;
 
     const extractWhatsappUrl = (payload) => {
         if (!payload) {
@@ -71,7 +71,7 @@ export default function Home() {
 
         const loadWhatsappUrl = async () => {
             try {
-                const response = await fetch('http://localhost:8000/public-config/whatsapp_url', {
+                const response = await fetch(`${config.parent_api_url}/public-config/whatsapp_url`, {
                     signal: controller.signal,
                 });
 
