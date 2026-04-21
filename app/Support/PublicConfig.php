@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Log;
 
 class PublicConfig
 {
-    private const WHATSAPP_FALLBACK = 'https://chat.whatsapp.com/LG9vyjEb6mK1N2Px4vhcF3?mode=gi_t';
-    private const WHATSAPP_URL_ENDPOINT = 'http://localhost:8000/public-config/whatsapp_url';
+    private const WHATSAPP_FALLBACK = 'https://chat.whatsapp.com/C3zAkEbvyV7EHFkflobSlh?mode=gi_t';
+    private const WHATSAPP_URL_ENDPOINT = 'https://testing.forexportalacademy.net/public-config/whatsapp_url';
 
     public static function whatsappUrl(): string
     {
