@@ -13,6 +13,7 @@ export default function Home() {
     const [open, setOpen] = useState(false);
     const [formSuccess, setFormSuccess] = useState(false);
     const [whatsappLink, setWhatsappLink] = useState(null);
+    const [telegramLink, setTelegramLink] = useState(null);
     const { data, setData, post, processing, errors, reset } = useForm({
         first_name: '',
         last_name: '',
@@ -37,9 +38,11 @@ export default function Home() {
             const candidates = [
                 payload.url,
                 payload.whatsapp_url,
+                payload.telegram_url,
                 payload.value,
                 payload?.data?.url,
                 payload?.data?.whatsapp_url,
+                payload?.data?.telegram_url,
                 payload?.data?.value,
             ];
 
@@ -95,7 +98,34 @@ export default function Home() {
             }
         };
 
+        const loadTelegramUrl = async () => {
+            try {
+                const response = await fetch(`${config.parent_api_url}/public-config/telegram_url`, {
+                    signal: controller.signal,
+                });
+
+                let payload;
+                try {
+                    payload = await response.json();
+                } catch {
+                    payload = await response.text();
+                }
+
+                if (!isMounted) {
+                    return;
+                }
+
+                const url = extractWhatsappUrl(payload);
+                if (url) {
+                    setTelegramLink(url);
+                }
+            } catch {
+                // Keep fallback if request fails.
+            }
+        };
+
         loadWhatsappUrl();
+        loadTelegramUrl();
 
         return () => {
             isMounted = false;

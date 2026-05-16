@@ -40,7 +40,7 @@ class WaitlistController extends Controller
         // Send email using the specific template for free course
         $templateAlias = "start-free-course";
         $classLink = PublicConfig::whatsappUrl();
-        $telegramLink = "https://t.me/+Mv5nThwlwbJhOTg0";
+        $telegramLink = PublicConfig::telegramUrl();
         $whatsappLink = $classLink;
 
         try {

@@ -57,14 +57,14 @@ class PublicConfig
         }
 
         if (is_array($payload)) {
-            foreach (['url', 'whatsapp_url', 'value'] as $key) {
+            foreach (['url', 'whatsapp_url', 'telegram_url', 'value'] as $key) {
                 if (!empty($payload[$key]) && filter_var($payload[$key], FILTER_VALIDATE_URL)) {
                     return $payload[$key];
                 }
             }
 
             if (isset($payload['data']) && is_array($payload['data'])) {
-                foreach (['url', 'whatsapp_url', 'value'] as $key) {
+                foreach (['url', 'whatsapp_url', 'telegram_url', 'value'] as $key) {
                     if (!empty($payload['data'][$key]) && filter_var($payload['data'][$key], FILTER_VALIDATE_URL)) {
                         return $payload['data'][$key];
                     }
