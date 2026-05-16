@@ -29,7 +29,7 @@ class SendWaitlistReminder extends Command
 
         $templateAlias = 'waitlist-reminder';
         $classLink = PublicConfig::whatsappUrl();
-        $telegramLink = 'https://t.me/+Mv5nThwlwbJhOTg0';
+        $telegramLink = PublicConfig::telegramUrl();
         $whatsappLink = $classLink;
 
         $query->orderBy('id')->chunkById(100, function ($waitlists) use ($templateAlias, $classLink, $telegramLink, $whatsappLink) {

@@ -9,6 +9,8 @@ class PublicConfig
 {
     private const WHATSAPP_FALLBACK = 'https://chat.whatsapp.com/C3zAkEbvyV7EHFkflobSlh?mode=gi_t';
     private const WHATSAPP_URL_ENDPOINT = 'https://testing.forexportalacademy.net/public-config/whatsapp_url';
+    private const TELEGRAM_FALLBACK = 'https://t.me/+Mv5nThwlwbJhOTg0';
+    private const TELEGRAM_URL_ENDPOINT = 'https://testing.forexportalacademy.net/public-config/telegram_url';
 
     public static function whatsappUrl(): string
     {
@@ -27,6 +29,25 @@ class PublicConfig
         }
 
         return self::WHATSAPP_FALLBACK;
+    }
+
+    public static function telegramUrl(): string
+    {
+        try {
+            $response = Http::timeout(5)->acceptJson()->get(self::TELEGRAM_URL_ENDPOINT);
+            if ($response->successful()) {
+                $value = self::extractUrl($response->json(), $response->body());
+                if ($value) {
+                    return $value;
+                }
+            }
+        } catch (\Throwable $e) {
+            Log::warning('Failed to fetch public Telegram URL', [
+                'error' => $e->getMessage(),
+            ]);
+        }
+
+        return self::TELEGRAM_FALLBACK;
     }
 
     private static function extractUrl(mixed $payload, string $rawBody): ?string
