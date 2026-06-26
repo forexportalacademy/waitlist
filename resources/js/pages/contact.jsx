@@ -43,10 +43,10 @@ export default function Contact() {
                             <Mail className="h-5 w-5 text-primary" />
                             <h3 className="mt-3 text-sm font-semibold text-foreground">Email</h3>
                             <a
-                                href="mailto:support@forexportalacademy.net"
+                                href="mailto:contact@forexportalacademy.net"
                                 className="mt-1 block break-words text-sm text-primary hover:underline"
                             >
-                                support@forexportalacademy.net
+                                contact@forexportalacademy.net
                             </a>
                         </div>
                         <div className="rounded-2xl border border-border p-5">

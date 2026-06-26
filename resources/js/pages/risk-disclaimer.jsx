@@ -176,10 +176,10 @@ export default function RiskDisclaimer() {
                             <p>
                                 Email:{' '}
                                 <a
-                                    href="mailto:support@forexportalacademy.net"
+                                    href="mailto:contact@forexportalacademy.net"
                                     className="font-medium text-primary hover:underline"
                                 >
-                                    support@forexportalacademy.net
+                                    contact@forexportalacademy.net
                                 </a>
                             </p>
                             <p>Website: ForexPortalAcademy.net</p>
