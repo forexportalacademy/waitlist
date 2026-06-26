@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react';
 import { Send } from 'lucide-react';
 
 export function Footer() {
@@ -25,11 +26,21 @@ export function Footer() {
 
                         <div className="space-y-3 text-sm text-white/70">
                             <h4 className="text-white text-base font-semibold">Quick links</h4>
-                            <p>Dashboard</p>
-                            <p>My courses</p>
-                            <p>Settings</p>
-                            <p>Terms &amp; Conditions</p>
-                            <p>Privacy policy</p>
+                            <Link href="/about" className="block transition-colors hover:text-white">
+                                About us
+                            </Link>
+                            <Link href="/contact" className="block transition-colors hover:text-white">
+                                Contact us
+                            </Link>
+                            <Link href="/terms-and-conditions" className="block transition-colors hover:text-white">
+                                Terms &amp; Conditions
+                            </Link>
+                            <Link href="/privacy-policy" className="block transition-colors hover:text-white">
+                                Privacy policy
+                            </Link>
+                            <Link href="/risk-disclaimer" className="block transition-colors hover:text-white">
+                                Risk disclaimer
+                            </Link>
                         </div>
 
                         <div className="space-y-3 text-sm text-white/70">

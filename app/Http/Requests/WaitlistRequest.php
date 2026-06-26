@@ -19,6 +19,7 @@ class WaitlistRequest extends FormRequest
             'email' => ['required', 'email:rfc,dns', 'max:255', 'unique:waitlists,email'],
             'phone' => ['required', 'string', 'max:40'],
             'gender' => ['required', 'string', 'max:40'],
+            'agreed' => ['accepted'],
         ];
     }
 
@@ -32,6 +33,7 @@ class WaitlistRequest extends FormRequest
             'email.unique' => 'This email address is already registered for the waitlist.',
             'phone.required' => 'Please provide a phone number.',
             'gender.required' => 'Please choose a gender.',
+            'agreed.accepted' => 'You must agree to the Terms & Conditions, Privacy Policy, and Risk Disclaimer.',
         ];
     }
 }

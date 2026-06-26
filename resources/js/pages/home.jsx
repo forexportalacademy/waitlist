@@ -7,6 +7,7 @@ import { ServicesSection } from '@/components/ServicesSection';
 import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { CTASection } from '@/components/CTASection';
 import { Footer } from '@/components/Footer';
+import { RiskDisclaimerPopup } from '@/components/RiskDisclaimerPopup';
 
 export default function Home() {
     const { flash, config } = usePage().props;
@@ -20,6 +21,7 @@ export default function Home() {
         email: '',
         phone: '',
         gender: '',
+        agreed: false,
     });
 
     const [toastVisible, setToastVisible] = useState(false);
@@ -158,6 +160,8 @@ export default function Home() {
                     rel="stylesheet"
                 />
             </Head>
+
+            <RiskDisclaimerPopup />
 
             <div className="min-h-screen bg-background">
                 {toastVisible && (
@@ -373,9 +377,36 @@ export default function Home() {
                                         {errors.gender && <p className="mt-1 text-xs text-red-600">{errors.gender}</p>}
                                     </div>
                                 </div>
+                                <div>
+                                    <label className="flex items-start gap-2 text-xs text-muted-foreground">
+                                        <input
+                                            type="checkbox"
+                                            name="agreed"
+                                            checked={data.agreed}
+                                            onChange={(event) => setData('agreed', event.target.checked)}
+                                            className="mt-0.5 h-4 w-4 shrink-0 rounded border-border accent-primary"
+                                        />
+                                        <span>
+                                            I agree to the{' '}
+                                            <Link href="/terms-and-conditions" target="_blank" className="font-medium text-primary hover:underline">
+                                                Terms &amp; Conditions
+                                            </Link>
+                                            ,{' '}
+                                            <Link href="/privacy-policy" target="_blank" className="font-medium text-primary hover:underline">
+                                                Privacy Policy
+                                            </Link>
+                                            , and{' '}
+                                            <Link href="/risk-disclaimer" target="_blank" className="font-medium text-primary hover:underline">
+                                                Risk Disclaimer
+                                            </Link>
+                                            .
+                                        </span>
+                                    </label>
+                                    {errors.agreed && <p className="mt-1 text-xs text-red-600">{errors.agreed}</p>}
+                                </div>
                                 <button
                                     type="submit"
-                                    disabled={processing}
+                                    disabled={processing || !data.agreed}
                                     className="w-full rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white hover:bg-primary/90 disabled:opacity-70"
                                 >
                                     Access

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\WaitlistController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -63,5 +64,27 @@ Route::get('/updates', function () {
         'description' => 'Updates are coming soon.',
     ]);
 })->name('updates');
+
+Route::get('/privacy-policy', function () {
+    return Inertia::render('privacy-policy');
+})->name('privacy-policy');
+
+Route::get('/terms-and-conditions', function () {
+    return Inertia::render('terms-and-conditions');
+})->name('terms-and-conditions');
+
+Route::get('/risk-disclaimer', function () {
+    return Inertia::render('risk-disclaimer');
+})->name('risk-disclaimer');
+
+Route::get('/about', function () {
+    return Inertia::render('about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return Inertia::render('contact');
+})->name('contact');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::post('/waitlist', [WaitlistController::class, 'store'])->name('waitlist.store');
